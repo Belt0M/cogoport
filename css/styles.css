@@ -373,15 +373,24 @@ header .talk_to_us video {
 }
 
 .products .container {
+	position: relative;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	flex-direction: column;
+	margin-top: 2rem;
 }
 
 .products .container .row {
 	display: flex;
 	align-items: center;
 	margin: 14px 0;
+	flex-direction: row;
+}
+
+.products .container .row .sub-container {
+	display: flex;
+	flex-direction: row;
 }
 
 .products .container .row > h4 {
@@ -391,10 +400,10 @@ header .talk_to_us video {
 	color: #000;
 }
 
-.products .container .row div:hover {
+.products .container .row .sub-container div:hover {
 	border: 1.5px solid #ee3425;
 }
-.products .container .row div {
+.products .container .row .sub-container div {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -409,14 +418,14 @@ header .talk_to_us video {
 	box-shadow: 0 1px 6px rgba(169, 188, 218, 0.65);
 }
 
-.products .container .row div h4 {
+.products .container .row .sub-container div h4 {
 	margin-top: 5px;
 	font-size: 16px;
 	line-height: 1.3em;
 	text-align: center;
 }
 
-.products .container .row div span {
+.products .container .row .sub-container div span {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -429,21 +438,21 @@ header .talk_to_us video {
 	cursor: pointer;
 }
 
-.products .container .row div span > span {
+.products .container .row .sub-container div span > span {
 	margin-right: 5px;
 }
 
-.products .container .row div span > svg {
+.products .container .row .sub-container div span > svg {
 	position: absolute;
 	right: 10%;
 	bottom: 0.6rem;
 }
 
-.products .container .row div > svg {
+.products .container .row .sub-container div > svg {
 	margin-bottom: 0px;
 }
 
-.products .container .row div span svg {
+.products .container .row .sub-container div span svg {
 	margin-top: 3px;
 }
 
@@ -551,6 +560,10 @@ header .talk_to_us video {
 	font-family: 'Ubuntu' sans-serif;
 }
 
+.how-it-works .buttons {
+	margin-top: 1rem;
+}
+
 .how-it-works button {
 	width: 200px;
 	padding: 12px;
@@ -633,7 +646,7 @@ header .talk_to_us video {
 
 .how-it-works .container img {
 	width: 100%;
-	transform: scale(1.4);
+	transform: scale(0.83);
 	z-index: 1;
 }
 
@@ -647,6 +660,7 @@ header .talk_to_us video {
 
 .industries .wrapper {
 	flex-direction: column;
+	gap: 2rem;
 }
 
 .industries .container {
@@ -1062,8 +1076,92 @@ footer .copyright .right-part .icons a {
 
 /* Media queries */
 
+/* Laptops */
+@media only screen and (max-width: 1230px) and (min-width: 480px) {
+	.wrapper {
+		width: 90% !important;
+	}
+
+	.products .container .row {
+		flex-direction: column;
+	}
+
+	.products .container .row > h4 {
+		margin: 0 0 2rem 0;
+		width: auto;
+		font-size: 1.3rem;
+	}
+
+	.how-it-works .wrapper {
+		width: 90%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.how-it-works .wrapper .buttons {
+		display: flex;
+		margin-top: 2em;
+		flex-direction: column;
+	}
+	.how-it-works .wrapper button {
+		margin: 0 0 1rem 0;
+		padding: 0.8rem 2rem;
+		border-radius: 2rem;
+		height: auto;
+		width: auto;
+		font-size: 18px;
+	}
+
+	.how-it-works .container {
+		flex-direction: column;
+		margin-bottom: 5rem;
+	}
+	.how-it-works .container .column {
+		position: relative;
+		order: 1;
+		left: 0 !important;
+		padding-bottom: 0;
+		align-items: center;
+		margin: 0;
+	}
+
+	.how-it-works .container img {
+		width: 60%;
+		margin: 3rem 0;
+	}
+
+	.how-it-works .container .column > div {
+		width: 90vw;
+		margin: 1rem 0;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.navigation nav {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 850px) and (min-width: 720px) {
+	header video {
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width: 820px) {
+	.products .container .row .sub-container {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.map img {
+		width: 30%;
+		height: 25vw;
+	}
+}
+
 /* Phones */
-@media only screen and (max-width: 480px) and (min-width: 320px) {
+@media only screen and (max-width: 720px) and (min-width: 320px) {
 	p {
 		font-size: 25px;
 	}
@@ -1369,7 +1467,7 @@ footer .copyright .right-part .icons a {
 	}
 
 	.bottom-nav div a,
-	h4 {
+	.bottom-nav div h4 {
 		display: none;
 	}
 
@@ -1416,6 +1514,41 @@ footer .copyright .right-part .icons a {
 	.whatsapp a svg {
 		width: 30%;
 		height: 20%;
+	}
+}
+
+@media only screen and (max-width: 720px) {
+	header .talk_to_us video {
+		width: 100%;
+		top: 1.45rem;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	header .talk_to_us video {
+		width: 100%;
+		top: 1.8rem;
+	}
+}
+
+@media only screen and (max-width: 535px) {
+	header .talk_to_us video {
+		width: 100%;
+		top: 2.3rem;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	header .talk_to_us video {
+		width: 100%;
+		top: 3.1rem;
+	}
+}
+
+@media only screen and (max-width: 470px) {
+	header .talk_to_us video {
+		width: 100%;
+		top: 3.6rem;
 	}
 }
 
